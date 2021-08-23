@@ -2,7 +2,7 @@ from pwn import *
 from Crypto.Util.number import long_to_bytes
 
 LIMIT = 64
-host, port = '35.208.224.209' , 6000
+host, port = 'crypto.be.ax' , 6000
 
 def get_params(r):
 	r.recvuntil(b'g: ')
