@@ -51,7 +51,7 @@ main()
 ```
 We are given 64 queries where we can send to the server `div`, and the server will give us `g^(flag // div) mod p`. We want to somehow leak the flag. I started off by considering how we can leak the last bit of `(flag // div)`, as if we can do that, we have a bit-by-bit leak to retrieve the flag by simply dividing by increasing powers of 2(same as pythons' >> operation).
 
-My idea for the leak relies on finding the Legendre Symbol for a number, which you can read about [here](https://en.wikipedia.org/wiki/Legendre_symbol). I will use the notation `(a | b)` to refer to this. In particular, under certain conditions, we can find the legendre symbol `((g^(flag // div)) /  p)` and use it to deduce the last bit of `(flag // div)`. First, let's start with the assumption that `g` is not a quadratic residue, i.e. `(g | p) = -1`. Then, if we write `k = (flag // div)`, consider the following cases:
+My idea for the leak relies on finding the Legendre Symbol for a number, which you can read about [here](https://en.wikipedia.org/wiki/Legendre_symbol). I will use the notation `(a | b)` to refer to this. In particular, under certain conditions, we can find the legendre symbol `((g^(flag // div)) |  p)` and use it to deduce the last bit of `(flag // div)`. First, let's start with the assumption that `g` is not a quadratic residue, i.e. `(g | p) = -1`. Then, if we write `k = (flag // div)`, consider the following cases:
 
 - If `k` is odd, then the legendre symbol `((g^k) | p)`, calculated by Euler's criterion, is `(g^k)^((p-1)/2) = (g^((p-1)/2))^k = (-1)^k = -1 mod p`. So, `g^k` will not be a quadratic residue either.
 
