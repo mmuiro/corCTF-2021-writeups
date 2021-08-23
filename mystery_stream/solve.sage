@@ -35,7 +35,7 @@ with open('ct', 'rb') as f:
 	ct = f.read()
 
 '''
-We recover the taps from the polynomial as x^64 + x^61 + x^60 + x^59 + x^58 + x^57 + x^56 + x^54 + x^52 + x^50 + x^49 + x^47 + x^45 + x^35 + x^34 + x^33 + x^32 + x^30 + x^27 + x^25 + x^24 + x^19 + x^17 + x^13 + x^12 + x^10 + x^7 + x^5 + x^4 + x^2 + 1.
+We recover the polynomial from the taps as x^64 + x^61 + x^60 + x^59 + x^58 + x^57 + x^56 + x^54 + x^52 + x^50 + x^49 + x^47 + x^45 + x^35 + x^34 + x^33 + x^32 + x^30 + x^27 + x^25 + x^24 + x^19 + x^17 + x^13 + x^12 + x^10 + x^7 + x^5 + x^4 + x^2 + 1.
 
 This is then factorable into the following 4 polynomials:
 p8 = x^8 + x^6 + x^5 + x^4 + 1
