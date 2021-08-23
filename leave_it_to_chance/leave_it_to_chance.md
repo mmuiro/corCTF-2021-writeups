@@ -167,11 +167,11 @@ Note that this method still works even if there are not exactly `k` errors; as l
 
 ## Application to this Challenge
 
-We now have a method to recover the original polynomial if we have up to certain number of errors. In our case, `n = 32`. However, `k` varies with the number of samples we send; if we don't use the swapping method to get `s` right with `75%` chance mentioned like before, then, if we call `c` our sample count, then `k` is about `c/2`. Then, we have the following equation:
+We now have a method to recover the original polynomial if we have up to certain number of errors. In our case, `n = 32`. However, `k` varies with the number of pairs we collect; if we don't use the swapping method to get `s` right with `75%` chance mentioned like before, then, if we call `c` our pair count, then `k` is about `c/2`. Then, we have the following equation:
 
 `32 + 2(c/2) = c`
 
-which has no solutions. What we are observing is that a `50%` error rate is the limit for what Berlekamp-Welch cannot handle. Of course, since `k` is only approximately `c/2`, this is not guaranteed; but the closer `k` is to `c/2`, the more samples you will need to collect; and the more samples you collect, the closer `k` goes to `c/2`. So, unless you get quite lucky, you should not bet on the `50%` chance working out. On the other hand, with a `75%` success rate(and hence `25%` error rate):
+which has no solutions. What we are observing is that a `50%` error rate is the limit for what Berlekamp-Welch cannot handle. Of course, since `k` is only approximately `c/2`, this is not guaranteed; but the closer `k` is to `c/2`, the more pairs you will need to collect; and the more pairs you collect, the closer `k` goes to `c/2`. So, unless you get quite lucky, you should not bet on the `50%` chance working out. On the other hand, with a `75%` success rate(and hence `25%` error rate):
 
 `32 + 2(c/4) = c`, which solves to `c = 64`, a very feasibly collectable amount of `(m, s)` pairs.
 
